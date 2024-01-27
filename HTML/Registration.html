@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../Images/favicon.ico" />
+    <link rel="stylesheet" href="../CSS/registration.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../JS/registration.js"></script>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <form action="../PHP/registrationPost.php" method="post">
+                <h2 style="color: red;">easybike. </h2><h2>Register</h2>
+                <input type="hidden" name="res" id="res">
+                <input type="hidden" name="os" id="os">
+                <input type="hidden" name="date" id="date">
+                <input type="hidden" name="weekday" id="weekday">
+                <input type="hidden" name="pw" id="pw">
+
+                <div class="inputbox">
+                    <ion-icon style="color: red;" name="person-outline"></ion-icon>
+                    <input type="text" name="fname" id="fname" required>
+                    <label style="color: red;" for=""><b>Firstname</label>  
+                </div>
+
+                <div class="inputbox">
+                    <ion-icon style="color: red;" name="person-outline"></ion-icon>
+                    <input type="text" name="lname" id="lname"  required>
+                    <label style="color: red;" for=""><b>Lastname</label>  
+                </div>
+
+                <div class="inputbox">
+                    <ion-icon style="color: red;" name="mail-outline"></ion-icon>
+                    <input type="email" name="user_mail" id="user_mail"  required>
+                    <label style="color: red;" for="">Email</label>  
+                </div>
+
+                <div class="login">
+                    <p>If you already have an Account<a href="Login.html"> Login!</a> now</p>  
+                </div>
+                <button onclick="sending_data()">Register!</button>
+            </form>
+        </div>
+    </section>
+
+    <link rel="prefetch" href="emails/registrierungsmaildesign.html">
+
+</body>
+
+</html>
+
+
+
+

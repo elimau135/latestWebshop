@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap stuff/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/gear.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../JS/Warenkorb.js"></script>
+    <script>
+      var productData = {
+    product1: {
+        title: "easybike PISTA GP",
+        description: "The easybike PISTA GP Helmet is a Racing Helmet that is used by many racers and even the MotoGP! If you want to step up your Game with really good aerodynamics, less noises and a perfect Fit. Then this is the perfect choice for you! This Helmet is a one Size Fits All Helmet, a newly developed Helmet Type by easybike. So no worrys about you Helmet Size, it will Fit perfectly"
+    },
+    product2: {
+        title: "easybike PRO+",
+        description: "The easybike PRO+ is also one of our newly inovated Helmets, that will fit everyone. This Helmet is escpecially designed for our daily crusours, with the need for perfect Protection. With an Carbon fiber shell,this is one of our best choices you can Take."
+    },
+    product3: {
+        title: "easybike F2",
+        description: "The easybike F2 is the best choise for our riders with a less filled wallet, but still high protection. "
+    },
+    product4: {
+        title: "Produkt 4",
+        description: "Informationen zu Produkt 4."
+    },
+    product5: {
+        title: "Produkt 5",
+        description: "Informationen zu Produkt 5."
+    },
+    product6: {
+        title: "Produkt 6",
+        description: "Informationen zu Produkt 6."
+    },
+    product7: {
+        title: "Produkt 7",
+        description: "Informationen zu Produkt 7."
+    },
+    product8: {
+        title: "Produkt 8",
+        description: "Informationen zu Produkt 8."
+    },
+    product9: {
+        title: "Produkt 9",
+        description: "Informationen zu Produkt 9."
+    },
+    
+};
+
+function showDetails(productId) {
+    var details = document.getElementById("product-details");
+    var titleElement = document.getElementById("product-title");
+    var descriptionElement = document.getElementById("product-description");
+
+    titleElement.textContent = productData[productId].title;
+    descriptionElement.textContent = productData[productId].description;
+
+    details.style.display = "block";
+}
+
+function closeDetails() {
+    var details = document.getElementById("product-details");
+    details.style.display = "none";
+}
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top bg-transparent">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html" style="color: rgb(255, 0, 0);"><b><button class=" btn btn-bd-primary-2 btn-lg">easybike.</button></b></a>
+              <button onclick="showSidebar()"  class="position-absolute top-0 start-50 translate-middle-x" type="button" style="background: transparent; border: none; align-items: center; margin-right: 32px;" class="position-relative">
+                <span ><b><ion-icon name="cart-outline" style="color: red; height: 60px; width: 50px; background: transparent;"></ion-icon></b></span>
+                <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-top:  15px;">
+                  0</span>
+                  
+              </button>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span><b><ion-icon name="grid-outline" style="color: red; height: 60px; width: 50px;"></ion-icon></b></span>
+              </button>
+              <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" style="color: rgb(255, 0, 0);">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel" style="color: rgb(255, 0, 0);"><b>easybike.</b></h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link" href="MyEasyBike.html" style="color: white;">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                          Modell's
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-center">
+                          <li><a class="dropdown-item" href="PanigaleV4R.html" style="color: white;"><img id="imgDropdownV4R" src="../Images/PANV4R_SPIN_SCARICO_ALTO_E_FRIZIONE.png.webp" alt=""></a></li>
+                          <li><a class="dropdown-item" href="SuperleggeraV4.html" style="color: white;"><img id="imgDropdown" src="../Images/SLV4-01-Model-Preview-1050x650.jpg.png" alt=""></a></li>
+                          <li><a class="dropdown-item" href="Hypermotard.html" style="color: white;"><img id="imgDropdown" src="../Images/Hypermotard-950-SP-MY22-Model.png" alt=""></a></li>
+                          <li><a class="dropdown-item" href="Streetfighter.html" style="color: white;"><img id="imgDropdownV4SP2" src="../Images/SFV4_SP2_00.png.webp" alt=""></a></li>
+                          <li><a class="dropdown-item" href="HondaFireblade.html" style="color: white;"><img id="imgDropdownFire" src="../Images/fireblade.png" alt=""></a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#" style="color: white;">Gear</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        MYEASYBIKE
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="login.html" style="color: white;">Login</a></li>
+                        <li><a class="dropdown-item" href="Registration.html" style="color: white;">Register</a></li>
+                      </ul>
+                    </li>
+                  </ul> 
+                  <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2 search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-bd-primary" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section class="banner">
+        <div style="width: 40rem; border: none; text-align: center;">
+            <div class="position-absolute top-50 start-50 translate-middle">    
+              <h1 class="fw-bold font-moonspace neonText big" style="color: rgb(0, 0, 0);">easybike. Gear!</h1>
+              <br>
+              <h4 class="fs-1 fw-bold" style="color: rgb(191, 191, 191); margin-top: -1.5%;">Our High Quality Gear</h4>
+              
+            </div>
+          </div>
+    </section>
+    
+    <div id="sidebar">
+      <h2>ShoppingCart</h2>
+      <ul id="cartItems"></ul>
+      <div id="totalPrice">Total: $0.00</div>
+      <div id="sidebarButtons">
+        <button onclick="hideSidebar()">Close</button>
+        <button onclick="checkout()">Checkout</button>
+        
+    </div>
+  </div>
+
+  
+
+
+
+
+    <section>
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom border-black border-2" style="text-align: center; color: black;">Helmets</h2>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 hovercard" id="item1">
+              <img onclick="showDetails('product1')" src="../Images/agv1.jpg" class="card-img-top" alt="Bild Artikel 1">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">AGV PISTA GP</h5>
+                <p class="card-text">551</p>
+                <p></p>
+                <p>1399,99€</p>
+                <p>STK: <span id="qty1">10</span></p>
+              </div>
+              <div  class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity1">How many would you Like to Add?</label>
+                  <input id="quantity1" type="number" min="1" max="" step="1" value="1">
+                  <button  type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(1, 'Pista GP', 1399.99, '551')">Add to Cart</button>
+                </form>
+                <br>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item2">
+              <img onclick="showDetails('product2')" src="../Images/Helm2.jpeg" class="card-img-top" alt="Bild Artikel 2">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">easybike PRO+</h5>
+                <p class="card-text">552</p>
+                <p></p>
+                <p>700,00€</p>
+                <p>STK: <span id="qty2">10</span></p>
+              </div>
+              <div  class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity2">How many would you Like to Add?</label>
+                  <input id="quantity2" type="number" min="1" max="" step="1" value="1">
+                  <button  type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(2, 'PRO+', 700.00, '552')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item3">
+              <img onclick="showDetails('product3')" src="../Images/Helm3.jpeg" class="card-img-top placement" alt="..."></a>
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">easybike F2</h5>
+                <p class="card-text">info</p>
+                <p></p>
+                <p>299,99€</p>
+                <p>STK: <span id="qty3">10</span></p>
+              </div>
+              <div  class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity3">How many would you Like to Add?</label>
+                  <input id="quantity3" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(3, 'F2', 299.99, '553')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="product-details" class="product-details">
+        <span class="close-btn" onclick="closeDetails()">X</span>
+        <h2 id="product-title">Produktinformationen</h2>
+        <p id="product-description">Hier stehen die Informationen zum Produkt.</p>
+    </div>
+    
+    </section>
+    
+    <section>
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom border-black border-2" style="text-align: center; color: black;">Leather Jackets</h2>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 hovercard" id="item4">
+              <img onclick="showDetails('product4')" src="../Images/Jacke1.jpg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">GP Jacket</h5>
+                <p class="card-text">561</p>
+                <p></p>
+                <p>1450.00€</p>
+                <p>STK: <span id="qty4">10</span></p>
+              </div>
+              <div  class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity4">How many would you Like to Add?</label>
+                  <input id="quantity4" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(4, 'GP Jacket', 1450.00, '561')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item5">
+              <img onclick="showDetails('product5')" src="../Images/Jacke2.jpeg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">Jacket PRO+</h5>
+                <p class="card-text">562</p>
+                <p></p>
+                <p>1000.00€</p>
+                <p>STK: <span id="qty5">10</span></p>
+              </div>
+              <div id="article5" class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity5">How many would you Like to Add?</label>
+                  <input id="quantity5" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(5, 'Jacket PRO+', 1000.00, '562')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item6">
+              <img onclick="showDetails('product6')" src="../Images/Jacke3.jpeg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">Jacket Ü4</h5>
+                <p class="card-text">563</p>
+                <p></p>
+                <p>700.00€</p>
+                <p>STK: <span id="qty6">10</span></p>
+              </div>
+              <div id="article6" class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity6">How many would you Like to Add?</label>
+                  <input id="quantity6" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(6, 'Jacket Ü4', 700.00, '563')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container px-4 py-5" id="custom-cards">
+        <h2 class="pb-2 border-bottom border-black border-2" style="text-align: center; color: black;">Leather Gloves</h2>
+      </div>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 hovercard" id="item7">
+              <img onclick="showDetails('product7')" src="../Images/Glove1.jpg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">GP Glove</h5>
+                <p class="card-text">571</p>
+                <p></p>
+                <p>450.00€</p>
+                <p>STK: <span id="qty7">10</span></p>
+              </div>
+              <div id="article7" class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity7">How many would you Like to Add?</label>
+                  <input id="quantity7" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(7, 'GP Glove', 450.00, '571')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item8">
+              <img onclick="showDetails('product8')" src="../Images/Glove2.jpeg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">Glove PRO+</h5>
+                <p class="card-text">572</p>
+                <p></p>
+                <p>250.00€</p>
+                <p>STK: <span id="qty8">10</span></p>
+              </div>
+              <div id="article8" class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity8">How many would you Like to Add?</label>
+                  <input id="quantity8" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(8, 'Glove PRO+', 250.00, '572')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 hovercard" id="item9">
+              <img onclick="showDetails('product9')" src="../Images/Glove3.jpeg" class="card-img-top" alt="...">
+              <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">Glove p3</h5>
+                <p class="card-text">573</p>
+                <p></p>
+                <p>99.99€</p>
+                <p>STK: <span id="qty9">10</span></p>
+              </div>
+              <div id="article9" class="card-body" style="align-items: center;align-content: center;text-align: center;">
+                <form>
+                  <label for="quantity9">How many would you Like to Add?</label>
+                  <input id="quantity9" type="number" min="1" max="" step="1" value="1">
+                  <button type="button" valu="submit" class="btn btn-bd-primary btn-lg" onclick="addToCart(9, 'Glove p3', 99.99, '573')">Add to Cart</button>
+                </form>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="pb-2 border-bottom border-black border-2" style="text-align: center; color: black;"></h2>
+        </div>
+        <div class="container">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="6000">
+                    <img src="../Images/Ducati-Panigale-V4R-MY23-overview-gallery-02-1920x1080.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="6000">
+                    <img src="../Images/PANV4R_SPIN_SCARICO_ALTO_E_FRIZIONE.png.webp" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="6000">
+                    <img src="../Images/Ducati-Panigale-V-4-R-169.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="pb-2 border-bottom border-black border-2" style="text-align: center; color: black;"></h2>
+        </div>
+    </section>
+    <section>
+      <div>
+          <div class="p-4 mb-4 bg-body-tertiary rounded-3" style="text-align:center;">
+            <div class="container-fluid py-5 col-md-8 fs-4">
+              <h2>Quality</h2>
+              <p>Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.
+                Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.
+              </p>
+             <a href="Modellauswahl.html"><button class="btn btn-outline-secondary btn-bd-primary btn-lg" type="button">Explore more</button></a>
+            </div>
+          </div>
+          <div class="row align-items-md-stretch">
+            <div class="col-md-6" style="text-align: center;">
+              <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>?</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                <a href="Gear.html"><button class="btn btn-outline-secondary btn-bd-primary btn-lg" type="button">Gear up!</button></a>
+              </div>
+            </div>
+            <div class="col-md-6" style="text-align: center;">
+              <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>?</h2>
+                <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+                <button class="btn btn-outline-secondary btn-bd-primary btn-lg" type="button">I Like Accesories</button>
+              </div>
+            </div>
+          </div>
+          </div>
+          <br>
+  </section>
+  <div class="container">
+    <footer class="py-5 border-top border-black border-2" data-bs-theme="dark">
+        <div class="row ">
+        <div class="col-6 col-md-2 mb-3">
+            
+        </div>
+    
+        <div class="col-6 col-md-2 mb-3">
+            <h5>easybike.</h5>
+            <ul class="nav flex-column" aria-labelledby="dark">
+            <li class="nav-item mb-2"><a href="Impressum.html" class="nav-link p-0 text-body-secondary">Impressum</a></li>
+            <li class="nav-item mb-2"><a href="AboutUs.html" class="nav-link p-0 text-body-secondary">About</a></li>
+            </ul>
+        </div>
+    
+        <div class="col-6 col-md-2 mb-3">
+            
+        </div>
+    
+        <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+            </form>
+        </div>
+        </div>
+    
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy; 2023 easybike</p>
+        <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+        </ul>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

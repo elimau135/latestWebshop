@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: rgb(235, 235, 235);
+    min-height: 200vh;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+.btn-bd-primary {
+    --bd-violet-bg: #f40000;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #8a8a8a;
+    --bs-btn-hover-border-color: #8a8a8a;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #8a8a8a;
+    --bs-btn-active-border-color: #8a8a8a;
+  }
+  .btn-bd-primary-2 {
+    --bd-violet-bg: #ff0000;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #c60000;
+    --bs-btn-hover-border-color: #c60000;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #c60000;
+    --bs-btn-active-border-color: #c60000;
+    border-radius: 50%; 
+    
+  }
+
+  .banner{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("../Images/Ducati-Panigale-V4R-MY23-overview-gallery-02-1920x1080.jpg");
+    background-size: cover;
+    
+}
+
+#imgDropdown{
+    height: 200px;
+  }
+  #imgDropdownV4R{
+    height: 190px;
+    margin-left: -15px;
+  }
+  #imgDropdownFire{
+    height: 190px;
+    margin-left: -10px;
+  }
+  #imgDropdownV4SP2{
+    height: 190px;
+    margin-left: -5px;
+  }
+
+  .dropdown-item:active{
+    background-color: #ff0000;
+  }
+
+  
